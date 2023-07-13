@@ -1,6 +1,7 @@
 # Webshop til salg af legetøj til børn - lavet med Laravel
 
 ## Beskrivelse:
+Denne beskrivelse er midlertidig tilføjet som fylde tekst.
 
 ### Porte:
 http://localhost/<br />
