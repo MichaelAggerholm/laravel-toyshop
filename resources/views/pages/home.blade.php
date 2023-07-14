@@ -1,5 +1,9 @@
 @extends('layouts.master')
 @section('name', 'Home Page')
 @section('content')
-    <h1>Home Page</h1>
+    <main class="homepage">
+        
+        @include('pages.components.home.header')
+
+    </main>
 @endsection
