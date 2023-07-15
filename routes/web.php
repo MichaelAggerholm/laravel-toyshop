@@ -20,8 +20,11 @@ Route::get('/cart', [PagesController::class, 'cart'])->name('cart');
 
 // Auth
 Route::get('/login', [AuthController::class, 'showLogin'])->name('login')->middleware('guest');
+Route::post('/login', [AuthController::class, 'postLogin'])->name('login')->middleware('guest');
+
 Route::get('/register', [AuthController::class, 'showRegister'])->name('register')->middleware('guest');
 Route::post('/register', [AuthController::class, 'postRegister'])->name('register')->middleware('guest');
+
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth');
 
 

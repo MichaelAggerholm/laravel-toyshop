@@ -41,6 +41,23 @@ class AuthController extends Controller
     }
 
     // Login user
+    public function postLogin(Request $request)
+    {
+        $credentials = $request->validate([
+            'email' => 'required|email|exists:users,email',
+            'password' => 'required',
+        ]);
+
+        if (Auth::attempt($credentials)) {
+            return back()->with('success', 'You have successfully logged in!');
+        }
+
+        return back()
+        ->withInput()
+        ->withErrors([
+            'email' => 'Invalid credentials!',
+        ]);
+    }
 
     // Reset password
 
