@@ -5,26 +5,36 @@
         <div class="login-form-box">
             <div class="login-title">Register</div>
             <div class="login-form">
-                <form action="" method="post">
+                <form action="{{route('register')}}" method="post">
+                    @csrf
 
                     <div class="field">
                         <label for="name">Name</label>
-                        <input type="text" name="name" id="name" placeholder="John Doe" required>
+                        <input type="text" name="name" id="name" class="@error('name') has-error @enderror" placeholder="John Doe">
+                        @error('name')
+                            <span class="field-error">{{$message}}</span>
+                        @enderror
                     </div>
                     
                     <div class="field">
                         <label for="email">Email</label>
-                        <input type="email" name="email" id="email" placeholder="John@gmail.com" required>
+                        <input type="email" name="email" id="email" class="@error('email') has-error @enderror" placeholder="John@gmail.com">
+                        @error('email')
+                            <span class="field-error">{{$message}}</span>
+                        @enderror
                     </div>
 
                     <div class="field">
                         <label for="password">Password</label>
-                        <input type="password" name="password" id="password" placeholder="********" required>
+                        <input type="password" name="password" id="password" class="@error('password') has-error @enderror" placeholder="********">
+                        @error('password')
+                            <span class="field-error">{{$message}}</span>
+                        @enderror
                     </div>
 
                     <div class="field">
                         <label for="password_confirmation">Confirm Password</label>
-                        <input type="password" name="password_confirmation" id="password_confirmation" placeholder="********" required>
+                        <input type="password" name="password_confirmation" id="password_confirmation" placeholder="********">
                     </div>
 
                     <div class="field">
