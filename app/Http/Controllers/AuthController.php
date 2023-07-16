@@ -48,8 +48,10 @@ class AuthController extends Controller
             'password' => 'required',
         ]);
 
-        if (Auth::attempt($credentials)) {
-            return back()->with('success', 'You have successfully logged in!');
+        if (Auth::attempt($credentials) && Auth::user()->is_admin) {
+            return view('admin.pages.dashboard')->with('success', 'You have successfully logged in!');
+        } elseif (Auth::attempt($credentials)) {
+            return redirect('/')->with('success', 'You have successfully logged in!');
         }
 
         return back()
