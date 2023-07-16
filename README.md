@@ -40,4 +40,5 @@ mere..
 ### Anvendte Designmønstre
 Repository pattern<br />
 
+### Database
 
