@@ -1,6 +1,6 @@
 <nav class="menu">
     
-    <img class="logo" src="{{asset('img/logo.svg')}}" alt="Home Logo">
+    <img class="logo" src="{{asset('img/Toy-Store-Logo.png')}}" alt="Home Logo">
 
     <ul>
     

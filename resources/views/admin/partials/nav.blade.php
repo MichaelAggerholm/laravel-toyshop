@@ -1,7 +1,7 @@
 <aside class="side-nav">
 
     <div class="logo">
-        <img src="{{asset('img/logo.svg')}}" alt="Adminpanel Logo">
+        <img src="{{asset('img/Toy-Store-Logo.png')}}" alt="Adminpanel Logo">
         ADMINPANEL
     </div>
 

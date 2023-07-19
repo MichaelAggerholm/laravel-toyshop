@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProductController;
@@ -38,7 +39,10 @@ Route::group(['prefix' => '/adminpanel', 'middleware' => 'admin'], function () {
         Route::get('/', [ProductController::class, 'index'])->name('adminpanel.products');
         Route::get('/create', [ProductController::class, 'create'])->name('adminpanel.create');
         Route::post('/create', [ProductController::class, 'store'])->name('adminpanel.store');
-        // Route::get('/edit', [ProductController::class, 'edit'])->name('adminpanel.edit');
-        // Route::post('/edit', [ProductController::class, 'update'])->name('adminpanel.update');
+    });
+
+    // Products routes
+    Route::group(['prefix' => 'categories'], function() {
+        Route::get('/', [CategoryController::class, 'index'])->name('adminpanel.categories');
     });
 });
