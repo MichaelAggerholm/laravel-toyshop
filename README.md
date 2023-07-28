@@ -41,7 +41,8 @@ Validering af input fields
 ### Sikkerhed
 CSRF beskyttelse<br />
 Password Hashing<br />
-mere..
+Route Authentication (middlewares) <br />
+Mere..
 
 ### Anvendte Designmønstre
 Repository pattern<br />
