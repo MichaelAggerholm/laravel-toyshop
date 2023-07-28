@@ -5,6 +5,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProductController;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -47,4 +48,13 @@ Route::group(['prefix' => '/adminpanel', 'middleware' => 'admin'], function () {
         Route::post('/', [CategoryController::class, 'store'])->name('adminpanel.category.store');
         Route::delete('/{id}', [CategoryController::class, 'destroy'])->name('adminpanel.category.destroy');
     });
+});
+
+// Route for clearing caches
+Route::get('/clear-cache', function () {
+    Artisan::call('route:cache');
+    Artisan::call('config:cache');
+    Artisan::call('cache:clear');
+    Artisan::call('view:clear');
+    return 'clear';
 });
