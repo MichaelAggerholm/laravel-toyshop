@@ -11,14 +11,17 @@ Mailhog: http://localhost:8025/ <br />
 Admin panel: http://localhost/adminpanel
 
 ## Installation:
-cd laravel-toyshop<br />
-sudo mv .env.example .env<br />
-composer install<br />
-php artisan key:generate<br />
-./vendor/bin/sail up<br />
-docker exec -it laravel-toyshop-laravel.test-1 /bin/bash<br />
-php artisan storage:link<br />
-php artisan migrate<br />
+cd laravel-toyshop  <br />
+sudo mv .env.example .env   <br />
+composer install    <br />
+php artisan key:generate    <br />
+php artisan storage:link    <br />
+./vendor/bin/sail up -d <br />
+npm run dev (Skal muligvis have en 'npm install' ved ved første kørsel) <br />
+php artisan migrate
+
+## Exec ind i docker container:
+docker exec -it laravel-toyshop-laravel.test-1 /bin/bash
 
 ## Dokumentation:
 Kort beskrivelse af dokumentationen
