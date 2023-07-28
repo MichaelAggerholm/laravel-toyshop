@@ -51,7 +51,7 @@ Route::group(['prefix' => '/adminpanel', 'middleware' => 'admin'], function () {
 });
 
 // Route for clearing caches
-Route::get('/clear-cache', function () {
+Route::get('/clear-caches', function () {
     Artisan::call('route:cache');
     Artisan::call('config:cache');
     Artisan::call('cache:clear');

@@ -4,8 +4,11 @@
 Denne beskrivelse er midlertidig tilføjet som fylde tekst.
 
 ## Porte:
-http://localhost/<br />
-http://localhost:8001/<br />
+Forside: http://localhost/ <br />
+Phpmyadmin: http://localhost:8081/ <br />
+Clear caches: http://localhost/clear-caches <br />
+Mailhog: http://localhost:8025/ <br />
+Admin panel: http://localhost/adminpanel
 
 ## Installation:
 cd laravel-toyshop<br />
