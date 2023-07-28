@@ -42,3 +42,16 @@ Repository pattern<br />
 
 ### Database
 
+### Models
+
+### Controllers
+
+### Views
+
+### Routes
+
+### Blade
+
+### Vigtige kilder
+Denne video er guld værd ift. Xdebug opsætning med laravel sail<br />
+https://www.youtube.com/watch?v=Xgn0EtB4chc
