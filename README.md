@@ -56,7 +56,18 @@ Repository pattern<br />
 
 ### Routes
 
+Laravel's routing er en stærk funktion, der giver klarhed og struktur til applikationen. <br />
+Du kan hurtigt identificere, hvilke URL'er din applikation håndterer, og hvilke controller-metoder, der håndterer dem. <br /><br />
+Navngivning af routes gør det nemt at generere URL'er eller redirects i din kode - for eksempel vil route('home') generere URL'en til hjemmeruten. <br/> 
+Middleware kan knyttes til routes, hvilket gør det muligt at udføre kode før requesten når til din controller - dette er praktisk for ting som autentificering. <br /><br />
+Route gruppering er også nyttig, da det gør det nemt at anvende fælles attributter til flere routes, som du gør med '/adminpanel' route-gruppen. <br />
+Sammenlagt tilbyder Laravel's routing system stor fleksibilitet og kontrol over, hvordan din applikation håndterer indkommende HTTP-requests. <br />
+Det er nemt at bruge og hjælper med at holde din applikation overskuelig og organiseret.
+
 ### Blade
+Blade er Laravel's skabelonsystem, der bruger simpel PHP og en nem syntaks for at skabe dynamiske visninger. Blade-skabeloner er hurtige grundet kompilering og caching, og de giver let adgang til data sendt fra controllers. <br /><br />
+Det gode ved Blade er dets intuitive syntaks og dens understøttelse af komponenter og slots til genanvendelige dele af brugergrænsefladen. Du kan også oprette master-skabeloner og udvide dem i dine visninger for at sikre genanvendelighed og konsistens. <br /><br />
+Blade har mange funktioner som kontrolstrukturer (@if, @else, @foreach, @while), inklusion af sub-views med @include, service injection med @inject og formularbinding. Alt dette gør Blade til et kraftfuldt værktøj til at bygge brugergrænseflader i Laravel.
 
 ### Vigtige kilder
 Denne video er guld værd ift. Xdebug opsætning med laravel sail<br />
