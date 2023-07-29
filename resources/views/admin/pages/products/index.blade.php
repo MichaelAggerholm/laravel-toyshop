@@ -43,12 +43,15 @@
                                     </td>
                                     <td>{{\Carbon\Carbon::parse($product->created_at)->format('d/m/Y')}}</td>
                                     <td>
-                                        -Delete-
-{{--                                        <form action="{{route('adminpanel.category.destroy', $category->id)}}" method="post">--}}
-{{--                                            @csrf--}}
-{{--                                            @method('DELETE')--}}
-{{--                                            <button type="submit" class="btn btn-danger">Delete</button>--}}
-{{--                                        </form>--}}
+                                        <div class="d-flex" style="gap: 5px;">
+                                            <a href="{{route('adminpanel.products.edit', $product->id)}}" class="btn btn-secondary btn-sm">Edit</a>
+
+                                            <form action="{{route('adminpanel.products.destroy', $product->id)}}" method="post">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                            </form>
+                                        </div>
                                     </td>
                                 </tr>
                             @endforeach
