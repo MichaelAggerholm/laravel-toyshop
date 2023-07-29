@@ -7,6 +7,7 @@ Denne beskrivelse er midlertidig tilføjet som fylde tekst.
 Forside: http://localhost/ <br />
 Phpmyadmin: http://localhost:8081/ <br />
 Clear caches: http://localhost/clear-caches <br />
+Link storage: http://localhost/linkstorage <br />
 Mailhog: http://localhost:8025/ <br />
 Admin panel: http://localhost/adminpanel
 

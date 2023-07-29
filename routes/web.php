@@ -66,3 +66,8 @@ Route::get('/clear-caches', function () {
     Artisan::call('view:clear');
     return 'clear';
 });
+
+// Route for linking storage
+Route::get('/linkstorage', function () {
+    Artisan::call('storage:link');
+});
