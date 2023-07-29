@@ -3,6 +3,9 @@
 @section('content')
     <h1 class="page-title">Products</h1>
     <div class="container">
+        <div class="text-end mb-3">
+            <a href="{{route('adminpanel.products.create')}}" class="btn btn-primary">+ &nbsp; Create Product</a>
+        </div>
         <div class="row">
             <div class="col-12">
                 <div class="card">
@@ -32,7 +35,7 @@
                                     <td>{{$product->category->name}}</td>
                                     <td>-Colors-</td>
                                     <td>-Image-</td>
-                                    <td>{{\Carbon\Carbon::parse($category->created_at)->format('d/m/Y')}}</td>
+                                    <td>{{\Carbon\Carbon::parse($product->created_at)->format('d/m/Y')}}</td>
                                     <td>
                                         -Delete-
 {{--                                        <form action="{{route('adminpanel.category.destroy', $category->id)}}" method="post">--}}
