@@ -65,6 +65,8 @@ class ProductController extends Controller
 
     // Delete product
     public function destroy($id) {
-        return 'destroy';
+        Product::findOrFail($id)->delete();
+
+        return back()->with('success', 'Produktet blev slettet!');
     }
 }
