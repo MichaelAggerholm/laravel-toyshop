@@ -10,7 +10,8 @@
                         <h5>Create Product</h5>
                     </div>
                     <div class="card-body">
-                        <form action="{{route('adminpanel.products.store')}}" method="post">
+                        {{--multipart/form-data er vigtigt i denne form, da man ellers ikke vil kunne uploade en fil--}}
+                        <form action="{{route('adminpanel.products.store')}}" method="post" enctype="multipart/form-data">
                             @csrf
 
                             {{--Row 1--}}
