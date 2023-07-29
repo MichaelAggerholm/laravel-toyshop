@@ -15,20 +15,24 @@
                             @csrf
                             <div class="form-group mb-3">
                                 <label for="name">Name</label>
-                                <input type="text" name="name" id="name" class="form-control @error('name') is-invalid @enderror" value="{{old('name')}}" />
+                                <input type="text" name="name" id="name"
+                                       class="form-control @error('name') is-invalid @enderror"
+                                       value="{{old('name')}}"/>
                                 @error('name')
                                 <span class="invalid-feedback">
-                                <strong>{{$message}}</strong>
-                            </span>
+                                    <strong>{{$message}}</strong>
+                                </span>
                                 @enderror
                             </div>
                             <div class="form-group mb-3">
                                 <label for="code">Code</label>
-                                <input type="color" name="code" id="code" class="form-control @error('code') is-invalid @enderror" value="{{old('code')}}" />
+                                <input type="color" name="code" id="code"
+                                       class="form-control @error('code') is-invalid @enderror"
+                                       value="{{old('code')}}"/>
                                 @error('code')
                                 <span class="invalid-feedback">
-                                <strong>{{$message}}</strong>
-                            </span>
+                                    <strong>{{$message}}</strong>
+                                </span>
                                 @enderror
                             </div>
                             <div class="form-group text-end">
@@ -49,14 +53,14 @@
                     <div class="card-body">
                         <table class="table table-stripped">
                             <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Name</th>
-                                    <th>Code</th>
-                                    <th>Total Products</th>
-                                    <th>Published</th>
-                                    <th>Action</th>
-                                </tr>
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>Code</th>
+                                <th>Total Products</th>
+                                <th>Published</th>
+                                <th>Action</th>
+                            </tr>
                             </thead>
                             <tbody>
                             @foreach ($colors as $color)
@@ -65,7 +69,8 @@
                                     <td>{{$color->name}}</td>
                                     <td>
                                         <div style="display: flex; align-items: center; gap: 10px;">
-                                            {{$color->code}} <span style="display: inline-block; width: 30px; height: 30px; border-radius: 50%; background: {{$color->code}}"></span>
+                                            {{$color->code}} <span
+                                                style="display: inline-block; width: 30px; height: 30px; border-radius: 50%; background: {{$color->code}}"></span>
                                         </div>
                                     </td>
                                     <td>-</td>
