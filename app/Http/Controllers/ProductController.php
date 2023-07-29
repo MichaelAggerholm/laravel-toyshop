@@ -55,12 +55,46 @@ class ProductController extends Controller
 
     // Edit product
     public function edit($id) {
-        return view('admin.pages.products.edit');
+        $product = Product::findOrFail($id);
+        $categories = Category::all();
+        $colors = Color::all();
+
+        return view('admin.pages.products.edit', ['product' => $product, 'categories' => $categories, 'colors' => $colors]);
     }
 
     // Update product
     public function update(Request $request, $id) {
-        return 'update';
+        $request->validate([
+            'title' => 'required|max:255',
+            'price' => 'required|numeric',
+            'category_id' => 'required|exists:categories,id',
+            'colors' => 'required|array',
+            'image' => 'image|mimes:jpg,jpeg,png,gif,svg|max:2048',
+        ]);
+
+        $product = Product::findOrFail($id);
+
+        // Opdater kun billede, hvis nyt billede er valgt.
+        if ($request->image) {
+            $image_name = 'product_images/' . time() . '-' . rand(0, 9999) . '.' . $request->image->extension();
+            $request->image->storeAs('public', $image_name);
+        } else {
+            $image_name = $product->image;
+        }
+
+        // Gem produkt
+        $product->update([
+            'title' => $request->title,
+            'price' => $request->price, // TODO: Skal muligvis ganges med 100 for at virke med betalingsopsætning. (Stripe)
+            'category_id' => $request->category_id,
+            'description' => $request->description,
+            'image' => $image_name,
+        ]);
+
+        // opdater valgte farver til produkt med sync
+        $product->colors()->sync($request->colors);
+
+        return redirect()->route('adminpanel.products')->with('success', 'Produktet blev opdateret!');
     }
 
     // Delete product
