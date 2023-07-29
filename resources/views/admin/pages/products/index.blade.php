@@ -33,8 +33,14 @@
                                     <td>{{$product->title}}</td>
                                     <td>{{$product->price}}</td>
                                     <td>{{$product->category->name}}</td>
-                                    <td>-Colors-</td>
-                                    <td>-Image-</td>
+                                    <td>
+                                        @foreach($product->colors as $color)
+                                            <span class="badge" style="background: {{$color->code}}">{{$color->name}}</span>
+                                        @endforeach
+                                    </td>
+                                    <td>
+                                        <img src="{{asset('storage/'.$product->image)}}" alt="{{$product->title}}" height="40">
+                                    </td>
                                     <td>{{\Carbon\Carbon::parse($product->created_at)->format('d/m/Y')}}</td>
                                     <td>
                                         -Delete-
