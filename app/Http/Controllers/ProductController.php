@@ -26,7 +26,31 @@ class ProductController extends Controller
 
     // Store new product
     public function store(Request $request) {
-        return 'store';
+        $request->validate([
+            'title' => 'required|max:255',
+            'price' => 'required|numeric',
+            'category_id' => 'required|exists:categories,id',
+            'colors' => 'required|array',
+            'image' => 'required|image|mimes:jpg,jpeg,png,gif,svg|max:2048',
+        ]);
+
+        // For at sikre et unikt navn til billeder som uploades.
+        $image_name = 'product_images/' . time() . '-' . rand(0, 9999) . '.' . $request->image->extension();
+        $request->image->storeAs('public', $image_name);
+
+        // Gem produkt
+        $product = Product::create([
+            'title' => $request->title,
+            'price' => $request->price, // TODO: Skal muligvis ganges med 100 for at virke med betalingsopsætning. (Stripe)
+            'category_id' => $request->category_id,
+            'description' => $request->description,
+            'image' => $image_name,
+        ]);
+
+        // Tilføj farver til produkt
+        $product->colors()->attach($request->colors);
+
+        return redirect()->route('adminpanel.products')->with('success', 'Produktet blev oprettet!');
     }
 
     // Edit product
