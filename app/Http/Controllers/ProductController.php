@@ -11,7 +11,7 @@ class ProductController extends Controller
 {
     // Display products table
     public function index() {
-        $products = Product::all();
+        $products = Product::with('category', 'colors')->orderBy('created_at', 'desc')->get();
 
         return view('admin.pages.products.index', ['products' => $products]);
     }
