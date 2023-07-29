@@ -15,11 +15,13 @@
                             @csrf
                             <div class="form-group mb-3">
                                 <label for="name">Name</label>
-                                <input type="text" name="name" id="name" class="form-control @error('name') is-invalid @enderror" value="{{old('name')}}" />
+                                <input type="text" name="name" id="name"
+                                       class="form-control @error('name') is-invalid @enderror"
+                                       value="{{old('name')}}"/>
                                 @error('name')
                                 <span class="invalid-feedback">
-                                <strong>{{$message}}</strong>
-                            </span>
+                                    <strong>{{$message}}</strong>
+                                </span>
                                 @enderror
                             </div>
                             <div class="form-group text-end">
@@ -40,13 +42,13 @@
                     <div class="card-body">
                         <table class="table table-stripped">
                             <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Name</th>
-                                    <th>Total Products</th>
-                                    <th>Published</th>
-                                    <th>Action</th>
-                                </tr>
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>Total Products</th>
+                                <th>Published</th>
+                                <th>Action</th>
+                            </tr>
                             </thead>
                             <tbody>
                             @foreach ($categories as $category)
@@ -56,7 +58,8 @@
                                     <td>-</td>
                                     <td>{{\Carbon\Carbon::parse($category->created_at)->format('d/m/Y')}}</td>
                                     <td>
-                                        <form action="{{route('adminpanel.category.destroy', $category->id)}}" method="post">
+                                        <form action="{{route('adminpanel.category.destroy', $category->id)}}"
+                                              method="post">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-danger">Delete</button>
