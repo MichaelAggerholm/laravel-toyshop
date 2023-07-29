@@ -106,9 +106,7 @@
                                         <label for="description">Description </label>
                                         <textarea name="description" id="description" cols="30" rows="10"
                                                   class="form-control @error('description') is_invalid @enderror"
-                                                  placeholder="Describe your product..">
-                                            {{old('description')}}
-                                        </textarea>
+                                                  placeholder="Describe your product..">{{old('description')}}</textarea>
                                         @error('description')
                                         <span class="invalid-feedback">
                                             <strong>{{$message}}</strong>
