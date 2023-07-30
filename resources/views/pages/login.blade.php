@@ -7,7 +7,7 @@
             <div class="login-form">
                 <form action="{{route('login')}}" method="post">
                     @csrf
-                    
+
                     <div class="field">
                         <label for="email">Email</label>
                         <!-- TODO: Gem gammel data ved fejlende registrering -->
@@ -28,6 +28,8 @@
                     <div class="field">
                         <button type="submit" class="btn btn-primary btn-block">Login</button>
                     </div>
+
+                    <a href="{{route('register')}}">Ny bruger? Registrer nu..</a>
 
                 </form>
             </div>
