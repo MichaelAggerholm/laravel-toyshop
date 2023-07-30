@@ -216,18 +216,35 @@ body {
     box-shadow: 0 8px 40px 0 rgba(49, 32, 137, 5%);
     text-align: center;
     max-width: 270px;
+    text-decoration: none;
+    transition: all 0.4s ease;
+
+    &:hover {
+        box-shadow: 0 10px 50px 2px rgba(0, 0, 0, 15%);
+
+        .image {
+            background: linear-gradient(to bottom right, $primary, $pink);
+
+            img {
+
+            }
+        }
+    }
 
     .image {
+        background: #F6F7FB;
+        height: 230px;
+        width: 270px;
+        max-width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 10px;
+        transition: all 0.4s ease;
 
         img {
-            background: #F6F7FB;
-            height: 230px;
-            width: 270px;
             max-width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 10px;
+            max-height: 100%;
         }
     }
 
@@ -264,6 +281,7 @@ body {
         font-size: 20px;
         font-weight: 500;
         margin-bottom: 20px;
+        color: $primary-dark;
     }
 }
 
