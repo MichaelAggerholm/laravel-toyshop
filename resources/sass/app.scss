@@ -5,6 +5,7 @@ $primary: #6100ff;
 $primary-dark: #260064;
 $grey: grey;
 $danger: #e91e1e;
+$pink: #FB2E86;
 
 * {
     margin: 0;
@@ -206,4 +207,68 @@ body {
         color: $primary-dark;
         margin-bottom: 30px;
     }
+}
+
+.product-box {
+    border-radius: 3px;
+    background: #fff;
+    overflow: hidden;
+    box-shadow: 0 8px 40px 0 rgba(49, 32, 137, 5%);
+    text-align: center;
+    max-width: 270px;
+
+    .image {
+
+        img {
+            background: #F6F7FB;
+            height: 230px;
+            width: 270px;
+            max-width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+    }
+
+    .product-title {
+        font-size: 18px;
+        font-weight: 500;
+        color: $pink;
+        margin-bottom: 10px;
+    }
+
+    .color-plateletes {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 10px;
+
+        .color-platelete {
+            width: 20px;
+            height: 5px;
+            border-radius: 10px;
+            background: #000;
+        }
+    }
+
+    .product-category {
+        color: #6f6f6f;
+        font-style: italic;
+        font-weight: 200;
+        margin-bottom: 10px;
+    }
+
+    .product-price {
+        font-size: 20px;
+        font-weight: 500;
+        margin-bottom: 20px;
+    }
+}
+
+.products-row {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
 }

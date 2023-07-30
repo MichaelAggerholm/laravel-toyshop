@@ -1,13 +1,13 @@
 <section class="product-box">
     <div class="image">
-        <img src="{{asset('img/products/c1.png')}}" alt="">
+        <img src="{{asset('storage/' . $product->image)}}" alt="">
     </div>
     <div class="product-title">{{$product->title}}</div>
     <div class="color-plateletes">
-        <div class="color-platelete" style="background: red"></div>
-        <div class="color-platelete" style="background: blue"></div>
-        <div class="color-platelete" style="background: green"></div>
+        @foreach($product->colors as $color)
+            <div class="color-platelete" style="background: {{$color->code}}"></div>
+        @endforeach
     </div>
-    <div class="product-category">Chairs</div>
-    <div class="product-price">100 Dkk,-</div>
+    <div class="product-category">{{$product->category->name}}</div>
+    <div class="product-price">{{$product->price}} Dkk,-</div>
 </section>
