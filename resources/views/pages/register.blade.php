@@ -16,7 +16,7 @@
                             <span class="field-error">{{$message}}</span>
                         @enderror
                     </div>
-                    
+
                     <div class="field">
                         <label for="email">Email</label>
                         <!-- TODO: Gem gammel data ved fejlende registrering -->
@@ -42,6 +42,8 @@
                     <div class="field">
                         <button type="submit" class="btn btn-primary btn-block">Register</button>
                     </div>
+
+                    <a href="{{route('login')}}">Allerde bruger? Login nu..</a>
 
                 </form>
             </div>
