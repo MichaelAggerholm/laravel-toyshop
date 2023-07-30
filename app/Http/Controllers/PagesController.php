@@ -2,13 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
     // Hjem
     public function home() {
-        return view('pages.home');
+        $products = Product::with('category', 'colors')->orderBy('created_at')->get();
+
+        return view('pages.home', [
+            'products' => $products
+        ]);
     }
 
     // Kurv
