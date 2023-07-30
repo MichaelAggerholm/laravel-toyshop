@@ -23,7 +23,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [PagesController::class, 'home'])->name('home');
 Route::get('/cart', [PagesController::class, 'cart'])->name('cart');
 Route::get('/wish-list', [PagesController::class, 'wishlist'])->name('wishlist');
-Route::get('/account', [PagesController::class, 'account'])->name('account');
+Route::get('/account', [PagesController::class, 'account'])->name('account')->middleware('auth');
 
 // Auth
 Route::get('/login', [AuthController::class, 'showLogin'])->name('login')->middleware('guest');
