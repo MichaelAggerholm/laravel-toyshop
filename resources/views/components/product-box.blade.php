@@ -1,4 +1,4 @@
-<section class="product-box">
+<a href="{{route('product', $product->id)}}" class="product-box">
     <div class="image">
         <img src="{{asset('storage/' . $product->image)}}" alt="">
     </div>
@@ -10,4 +10,4 @@
     </div>
     <div class="product-category">{{$product->category->name}}</div>
     <div class="product-price">{{$product->price}} Dkk,-</div>
-</section>
+</a>
