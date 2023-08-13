@@ -13,12 +13,12 @@
                     <p class="p-price">{{$product->price}} Dkk,-</p> {{--TODO: Skal muligvis divideres med 100 pga. betalingsopsætning--}}
                     <p class="p-category">- {{$product->category->name}}</p>
                     <p class="p-description">{{$product->description}}</p>
-                    <form action="" method="post">
+                    <form action="{{Route('addToCart', $product->id)}}" method="post">
                         @csrf
                         <div class="p-form">
                             <div class="p-colors">
                                 <label for="color">Farve</label>
-                                <select name="color" id="color">
+                                <select name="color" id="color" required>
                                     <option value="">-- Farve</option>
                                     @foreach($product->colors as $color)
                                         <option value="{{$color->id}}">{{$color->name}}</option>

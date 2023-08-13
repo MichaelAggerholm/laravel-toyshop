@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ColorController;
 use App\Http\Controllers\PagesController;
@@ -25,6 +26,9 @@ Route::get('/cart', [PagesController::class, 'cart'])->name('cart');
 Route::get('/wish-list', [PagesController::class, 'wishlist'])->name('wishlist');
 Route::get('/account', [PagesController::class, 'account'])->name('account')->middleware('auth');
 Route::get('/product/{id}', [PagesController::class, 'product'])->name('product');
+
+// Cart
+Route::post('/add-to-cart/{id}', [CartController::class, 'addToCart'])->name('addToCart');
 
 // Auth
 Route::get('/login', [AuthController::class, 'showLogin'])->name('login')->middleware('guest');
