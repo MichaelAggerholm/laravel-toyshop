@@ -39,7 +39,7 @@ class CartController extends Controller
             session()->put('cart', [$item]);
         }
 
-        return back()->with('addedToCart', 'Item added to cart successfully');
+        return back()->with('addedToCart', 'Varen blev tilføjet til kurven');
     }
 
     public function checkItemInCart($item)
