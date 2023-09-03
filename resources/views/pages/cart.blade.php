@@ -43,6 +43,12 @@
                                     </td>
                                 </tr>
                             @endforeach
+
+                            <tr class="cart-total">
+                                <td colspan="4" style="text-align: right;">Total</td>
+                                <td>total price Dkk,-</td>
+                            </tr>
+
                             @else
                             <tr>
                                 <td colspan="6" class="empty-cart">Kurven er tom.</td>
@@ -51,6 +57,11 @@
                     </tbody>
                 </table>
             </div>
+
+            <div class="cart-actions">
+                <a href="#" class="btn btn-primary">Til betaling</a>
+            </div>
+
         </div>
     </main>
 
