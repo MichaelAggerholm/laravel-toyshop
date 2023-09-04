@@ -9,6 +9,13 @@
 
     <main class="cart-page">
         <div class="container">
+
+            @if(session()->has('removedFromCart'))
+                <div class="confirmMessage">
+                    {{session()->get('removedFromCart')}}
+                </div>
+            @endif
+
             <div class="cart-table">
                 <table class="table">
                     <thead>
@@ -33,10 +40,10 @@
                                     </td>
                                     <td>{{$item['color']['name']}}</td>
                                     <td>{{$item['product']['price']}} kr.</td>
-                                    <td>{{$item['quantity']}}</td>
+                                    <td>{{$item['quantity']}}</td> <!-- TODO: Gør det muligt at +/- fra quantity, direkte fra kurven -->
                                     <td>{{App\Models\Cart::unitPrice($item)}} kr.</td>
                                     <td>
-                                        <form action="" method="post">
+                                        <form action="{{route('removeFromCart', $key)}}" method="post">
                                             @csrf
                                             <button type="submit" class="btn btn-primary">X</button>
                                         </form>
