@@ -4,7 +4,7 @@
 
     <header class="page-header">
         <h1>Kurv</h1>
-        <h3 class="cart-amount">999 Kr,-</h3>
+        <h3 class="cart-amount" style="border-bottom: 1px solid #fff">Total: {{\App\Models\Cart::totalAmount()}} Kr.</h3>
     </header>
 
     <main class="cart-page">
@@ -32,9 +32,9 @@
                                         </a>
                                     </td>
                                     <td>{{$item['color']['name']}}</td>
-                                    <td>{{$item['product']['price']}} Dkk,-</td>
+                                    <td>{{$item['product']['price']}} kr.</td>
                                     <td>{{$item['quantity']}}</td>
-                                    <td>Total pris.. kommer</td>
+                                    <td>{{App\Models\Cart::unitPrice($item)}} kr.</td>
                                     <td>
                                         <form action="" method="post">
                                             @csrf
@@ -45,8 +45,8 @@
                             @endforeach
 
                             <tr class="cart-total">
-                                <td colspan="4" style="text-align: right;">Total</td>
-                                <td>total price Dkk,-</td>
+                                <td colspan="4" style="text-align: right;">Total:</td>
+                                <td>{{\App\Models\Cart::totalAmount()}} kr.</td>
                             </tr>
 
                             @else
