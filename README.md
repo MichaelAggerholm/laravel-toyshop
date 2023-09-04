@@ -12,11 +12,11 @@ Mailhog: http://localhost:8025/ <br />
 Admin panel: http://localhost/adminpanel
 
 ## Installation:
-cd laravel-toyshop  <br />
-sudo mv .env.example .env   <br />
-composer install    <br />
-php artisan key:generate    <br />
-php artisan storage:link    <br />
+cd laravel-toyshop <br />
+sudo mv .env.example .env <br />
+composer install <br />
+php artisan key:generate <br />
+php artisan storage:link <br />
 ./vendor/bin/sail up -d <br />
 npm run dev (Skal muligvis have en 'npm install' ved ved første kørsel) <br />
 php artisan migrate
@@ -45,8 +45,20 @@ Password Hashing<br />
 Route Authentication (middlewares) <br />
 Mere..
 
+### Betalings gateway
+Vi benytter Stripe som betalings gateway, dette er enkelt at sætte op og er gratis at benytte.<br />
+Links til stripe dokumentation: <br />
+https://stripe.com/docs/checkout/quickstart?lang=php&client=html <br />
+Yderligere links til dokumentation for egen reference: <br />
+1. https://stripe.com/docs/payments/accept-a-payment <br />
+2. https://stripe.com/docs/payments/more-payment-scenarios <br />
+3. https://stripe.com/docs/payments/finalize-payments-on-the-server <br />
+
+Når logget ind, kan man finde API keys her: <br />
+https://dashboard.stripe.com/test/apikeys
+
 ### Anvendte Designmønstre
-Repository pattern<br />
+Repository pattern <br />
 
 ### Database
 
