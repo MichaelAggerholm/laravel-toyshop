@@ -176,28 +176,28 @@ body {
             margin-bottom: 30px;
             color: $primary-dark;
         }
-
-        .field {
-            margin-bottom: 25px;
-
-            input {
-                width: 100%;
-                padding: 10px 15px;
-                border-radius: 200px;
-                border: 1px solid #ddd;
-            }
-
-            .has-error {
-                border-color: $danger;
-            }
-        }
-
-        .field-error {
-            color: $danger;
-            font-size: 13px;
-            margin-top: 2px;
-        }
     }
+}
+
+.field {
+    margin-bottom: 25px;
+
+    input, select {
+        width: 100%;
+        padding: 10px 15px;
+        border-radius: 200px;
+        border: 1px solid #ddd;
+    }
+
+    .has-error {
+        border-color: $danger;
+    }
+}
+
+.field-error {
+    color: $danger;
+    font-size: 13px;
+    margin-top: 2px;
 }
 
 .container {
@@ -546,6 +546,22 @@ body {
     color: $primary;
     text-align: center;
     margin-bottom: 20px;
+}
+
+.checkout-page {
+    padding: 70px 0;
+    background: #fafafa;
+
+    .checkout-form {
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 6px rgba(0,0,0,0.09);
+        overflow: hidden;
+        padding: 30px;
+        width: 700px;
+        max-width: 100%;
+        margin: 0 auto;
+    }
 }
 
 
