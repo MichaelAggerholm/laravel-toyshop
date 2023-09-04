@@ -3,7 +3,6 @@
 @section('content')
 
     @if(session()->has('addedToCart'))
-
         <section class="pop-up">
             <div class="pop-up-box">
                 <div class="pop-up-title">
@@ -15,7 +14,6 @@
                 </div>
             </div>
         </section>
-
     @endif
 
     <div class="product-page">
