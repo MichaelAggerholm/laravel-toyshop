@@ -53,4 +53,19 @@ class CartController extends Controller
         }
         return -1;
     }
+
+    public function removeFromCart($key) {
+        // If the cart exists, remove the item at the given key with array_splice
+        if (session()->has('cart')) {
+            $cart = session()->get('cart');
+            array_splice($cart, $key, 1);
+
+            // Update the cart session, and redirect back with a success message
+            session()->put('cart', $cart);
+            return back()->with('removedFromCart', 'Varen blev fjernet fra kurven');
+        }
+
+        // Should not be possible to get here, but just in case
+        return back()->with('removedFromCart', 'Fejl.. der er ingen varer i kurven, hvordan kan du slette noget?!');
+    }
 }

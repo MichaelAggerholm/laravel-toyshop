@@ -29,6 +29,7 @@ Route::get('/product/{id}', [PagesController::class, 'product'])->name('product'
 
 // Cart
 Route::post('/add-to-cart/{id}', [CartController::class, 'addToCart'])->name('addToCart');
+Route::post('/remove-from-cart/{key}', [CartController::class, 'removeFromCart'])->name('removeFromCart');
 
 // Auth
 Route::get('/login', [AuthController::class, 'showLogin'])->name('login')->middleware('guest');
