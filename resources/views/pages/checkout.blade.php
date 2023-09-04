@@ -66,10 +66,10 @@
                         <label for="country">Country</label>
                         <select name="country" id="country">
                             <option value="">-- Vælg land --</option>
-                            <option value="Denmark">-- Vælg land --</option>
-                            <option value="Norway">Norway</option>
-                            <option value="Sweden">Sweden</option>
-                            <option value="Germany">Germany</option>
+                            <option value="Denmark">Danmark</option>
+                            <option value="Norway">Norge</option>
+                            <option value="Sweden">Sverige</option>
+                            <option value="Germany">Tyskland</option>
                         </select>
                         @error('country')
                         <span class="field-error">{{$message}}</span>
