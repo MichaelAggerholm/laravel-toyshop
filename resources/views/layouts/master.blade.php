@@ -7,6 +7,7 @@
 
     @vite('resources/sass/app.scss')
     <title>@yield('title')</title>
+    @yield('head')
 </head>
 <body>
     @include('layouts.partials.nav')

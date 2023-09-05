@@ -564,4 +564,12 @@ body {
     }
 }
 
-
+.checkoutSuccessContainer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    font-weight: 500;
+}

@@ -7,6 +7,7 @@ use App\Http\Controllers\ColorController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\StripeController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
@@ -25,9 +26,11 @@ Route::get('/', [PagesController::class, 'home'])->name('home');
 Route::get('/cart', [PagesController::class, 'cart'])->name('cart');
 Route::get('/wish-list', [PagesController::class, 'wishlist'])->name('wishlist');
 Route::get('/account', [PagesController::class, 'account'])->name('account')->middleware('auth');
-// Det er kun muligt at gå til checkout, hvis man er logget ind.
-Route::get('/checkout', [PagesController::class, 'checkout'])->name('checkout')->middleware('auth');
 Route::get('/product/{id}', [PagesController::class, 'product'])->name('product');
+
+// Det er kun muligt at gå til checkout, hvis man er logget ind.
+Route::get('/checkout', [StripeController::class, 'checkout'])->name('checkout')->middleware('auth');
+Route::get('/checkout-success', [StripeController::class, 'success'])->name('success')->middleware('auth');
 
 // Cart
 Route::post('/add-to-cart/{id}', [CartController::class, 'addToCart'])->name('addToCart');
