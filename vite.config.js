@@ -11,6 +11,7 @@ export default defineConfig({
                 'resources/sass/app.scss',
                 'resources/sass/admin.scss',
                 'resources/js/app.js',
+                'resources/js/stripe.js',
             ],
             refresh: true,
 
