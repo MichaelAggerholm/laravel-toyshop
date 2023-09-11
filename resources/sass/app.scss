@@ -505,6 +505,7 @@ body {
                     padding: 10px;
                     font-weight: 400;
                     font-size: 18px;
+                    vertical-align: middle;
 
                     .cart-item-title {
                         font-weight: 500;
@@ -515,6 +516,10 @@ body {
                         align-items: center;
                         gap: 20px;
 
+                        p {
+                            margin: 0;
+                        }
+
                         img {
                             width: 50px;
                         }
@@ -523,11 +528,13 @@ body {
             }
 
             .cart-total {
+                border: none;
 
                 td {
                     font-weight: 600;
                     font-size: 20px;
                     color: $primary-dark;
+                    border:none;
                 }
             }
         }
@@ -573,3 +580,41 @@ body {
     margin-top: 100px;
     font-weight: 500;
 }
+
+// Stripe styling BEGIN //
+
+.stripe-payment-label {
+    display: flex;
+    margin-bottom: 20px;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.StripeElement {
+    height: 40px;
+    padding: 10px 12px;
+    width: 100%;
+    color: #32325d;
+    background-color: white;
+    border: 1px solid transparent;
+    border-radius: 4px;
+
+    box-shadow: 0 1px 3px 0 #e6ebf1;
+    -webkit-transition: box-shadow 150ms ease;
+    transition: box-shadow 150ms ease;
+}
+
+.StripeElement--focus {
+    box-shadow: 0 1px 3px 0 #cfd7df;
+}
+
+.StripeElement--invalid {
+    border-color: #fa755a;
+}
+
+.StripeElement--webkit-autofill {
+    background-color: #fefde5 !important;
+}
+
+// Stripe styling END //
