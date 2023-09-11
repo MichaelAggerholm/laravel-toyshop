@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\ColorController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\AuthController;
@@ -27,10 +28,11 @@ Route::get('/cart', [PagesController::class, 'cart'])->name('cart');
 Route::get('/wish-list', [PagesController::class, 'wishlist'])->name('wishlist');
 Route::get('/account', [PagesController::class, 'account'])->name('account')->middleware('auth');
 Route::get('/product/{id}', [PagesController::class, 'product'])->name('product');
+Route::get('/checkout', [PagesController::class, 'checkout'])->name('checkout')->middleware('auth');
+Route::get('/success', [PagesController::class, 'success'])->name('success');
 
-// Det er kun muligt at gå til checkout, hvis man er logget ind.
-Route::get('/checkout', [StripeController::class, 'checkout'])->name('checkout')->middleware('auth');
-Route::get('/checkout-success', [StripeController::class, 'success'])->name('success')->middleware('auth');
+// Checkout
+Route::post('/stripe-checkout', [CheckoutController::class, 'stripeCheckout'])->name('stripeCheckout')->middleware('auth');
 
 // Cart
 Route::post('/add-to-cart/{id}', [CartController::class, 'addToCart'])->name('addToCart');
