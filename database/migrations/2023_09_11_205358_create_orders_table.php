@@ -13,6 +13,20 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
+            $table->unsignedInteger('user_id');
+            $table->string('name');
+            $table->string('email');
+            $table->string('phone')->nullable();
+            $table->string('address');
+            $table->string('city')->nullable();
+            $table->string('state')->nullable();
+            $table->string('zip')->nullable();
+            $table->string('country')->nullable();
+            $table->bigInteger('total')->default(0);
+            // Nullable because the payment method could in the future be something else than Stripe
+            $table->string('stripe_id')->nullable(); // payment_method_id fra CheckoutController
+            $table->string('status')->default('pending');
+
             $table->timestamps();
         });
     }
