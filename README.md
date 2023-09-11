@@ -19,7 +19,7 @@ php artisan key:generate <br />
 php artisan storage:link <br />
 ./vendor/bin/sail up -d <br />
 npm run dev (Skal muligvis have en 'npm install' ved ved første kørsel) <br />
-php artisan migrate
+php artisan migrate (For at køre migration skal man exec ind i laravel containeren først) <br />
 
 ## Exec ind i docker container:
 docker exec -it laravel-toyshop-laravel.test-1 /bin/bash
