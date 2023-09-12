@@ -27,6 +27,9 @@ class CheckoutController extends Controller
         try {
             if ($request->payment_method_id) {
                 //Create the PaymentIntent, this will create the order details to stripe
+                // TODO: Opdater det her med mange flere brugerdetaljer, enten her, eller måske i det latterlige Javascript jeg fik tilføjet på checkout.blade.php
+                // TODO: Det skal gøres med et 'line_items' object som i videoen her: https://www.youtube.com/watch?v=gkc1GcBKh1M
+                // TODO: og alt skal med, farve, størrelse, antal, navn, pris, osv. osv.
                 PaymentIntent::create([
                     'payment_method' => $request->payment_method_id,
                     'amount' => Cart::totalAmount() * 100,
