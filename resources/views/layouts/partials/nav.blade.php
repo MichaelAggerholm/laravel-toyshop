@@ -29,9 +29,21 @@
             </a>
         </li>
 
+        <?php
+        $quantity = 0;
+
+        if (session()->has('cart')) {
+            $cart = session()->get('cart');
+
+            foreach ($cart as $item) {
+                $quantity += $item['quantity'];
+            }
+        }
+        ?>
+
         <li>
             <a href="{{route('cart')}}">
-                <span class="info-count">3</span>
+                <span class="info-count">{{$quantity}}</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 48 48">
                     <mask id="ipSShopping0"><g fill="none"><path fill="#fff" d="M39 32H13L8 12h36l-5 20Z"/>
                         <path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"
