@@ -71,7 +71,9 @@ class CheckoutController extends Controller
         // Everything is done, payment done, order and order items stored in database, so we clear the cart
         session()->forget('cart');
 
-        // Redirect to success page
-         return redirect()->route('success', ['order' => $order]);
+        // Redirect to success page with order details
+         return view('pages.orderSuccess', [
+             'order' => $order,
+         ]);
     }
 }

@@ -618,3 +618,26 @@ body {
 }
 
 // Stripe styling END //
+
+.page-success {
+    padding: 70px 0;
+    text-align: center;
+
+    h1 {
+        font-size: 40px;
+        font-weight: 600;
+        color: $primary-dark;
+    }
+
+    h2 {
+        font-size: 30px;
+        font-weight: 300;
+        color: $primary;
+    }
+
+    h3 {
+        font-size: 24px;
+        font-weight: 300;
+        color: #000;
+    }
+}
