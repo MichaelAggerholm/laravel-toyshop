@@ -20,6 +20,8 @@ php artisan storage:link <br />
 ./vendor/bin/sail up -d <br />
 npm run dev (Skal muligvis have en 'npm install' ved ved første kørsel) <br />
 php artisan migrate (For at køre migration skal man exec ind i laravel containeren først) <br />
+Hvis migrating fejler pga. manglende rettigheder, kan man rette .env til db username=root og password= <br />
+Ellers skal man exec ind i mysql og lave sail brugeren med alle privileges 
 
 ## Exec ind i docker container:
 docker exec -it laravel-toyshop-laravel.test-1 /bin/bash
