@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section('title', 'Edit product')
+@section('title', 'Rediger ' . $product->title)
 @section('content')
     <h1 class="page-title">Edit Product</h1>
     <div class="container">
