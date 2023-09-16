@@ -18,6 +18,9 @@
 
         <li>
             <a href="{{route('wishlist')}}">
+                @auth
+                    <span class="info-count">{{count(auth()->user()->wishlist)}}</span>
+                @endauth
                 <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 36 36">
                     <path fill="currentColor" d="M34 16.78a2.22 2.22 0 0 0-1.29-4l-9-.34a.23.23 0 0
                     1-.2-.15l-3.11-8.4a2.22 2.22 0 0 0-4.17 0l-3.1 8.43a.23.23 0 0 1-.2.15l-9 .34a2.22
